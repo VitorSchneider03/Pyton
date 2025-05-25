@@ -12,3 +12,6 @@ idaderescebe  = input('Qual a sua idade? ')
 pesorescebe = input('Qual seu peso? ')
 #'\n' Quebra linha
 print('Seu Nome: ', nomerescebe, '\nSua Idade: ', idaderescebe, '\nSeu Peso: ', pesorescebe)
+
+#Opcao format
+print('Olá, {}!'.format(nomerescebe))
