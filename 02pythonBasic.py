@@ -14,10 +14,20 @@ pesorescebe = input('Qual seu peso? ')
 print('Seu Nome: ', nomerescebe, '\nSua Idade: ', idaderescebe, '\nSeu Peso: ', pesorescebe)
 
 #Opcao format
-print('Olá, {}!'.format(nomerescebe))
+print('Olá, {}!\nseu peso é {}'.format(nomerescebe, pesorescebe))
 print('\n--------------\n')
 #Passando para int -- float -- bool-- str
 n1= int(input('Vamos testar a operação de soma!\nInsira o primeiro valor: '))
 n2= int(input('Segundo valor: '))
 vl= n1 + n2
 print('\nA soma dos valores é ', vl)
+#Tipo da Variavel
+tipo = input("Insira Algo: ")
+
+print('Só espaço? ', tipo.isspace())
+print('É número? ', tipo.isnumeric())
+print('É Alfabeto? ', tipo.isalpha())
+print('É Alphanumerico? ', tipo.isalnum())
+print('Está em maiúsculo? ', tipo.isupper())
+print('Está em minúsculo? ', tipo.islower())
+print('Está capitalizado? ', tipo.istitle())
