@@ -31,3 +31,8 @@ print('É Alphanumerico? ', tipo.isalnum())
 print('Está em maiúsculo? ', tipo.isupper())
 print('Está em minúsculo? ', tipo.islower())
 print('Está capitalizado? ', tipo.istitle())
+
+#texto end
+
+print('teste de primeiro texto com end', end=' ')
+print('Teste de segundo texto')
