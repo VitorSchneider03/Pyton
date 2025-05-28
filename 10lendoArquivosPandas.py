@@ -18,3 +18,5 @@ print('\n\n', arq['FUNCAO'].value_counts())
 print('Média de idade:\n', arq.groupby('FUNCAO')['IDADE'].mean())
 print('Idade Máxima por setor:\n', arq.groupby('FUNCAO')['IDADE'].max())
 print('\n\n\nOrdenando por idade:\n', arq.sort_values(by='IDADE', ascending=False))
+
+#usar função merge para vincular duas tabelas
