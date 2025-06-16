@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from sys import exit
+from random import randint
 
 pygame.init()
 
@@ -9,14 +10,18 @@ altura = 480
 x = largura/2
 y = altura/2
 
-#relogio = pygame.time.Clock()
+x_boot = randint(0, 600)
+y_boot = randint(0, 430)
+
+relogio = pygame.time.Clock()
 
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption('Game')
 while True:
-    #relogio.tick(100)
-    tela.fill((0,0,0))
+    relogio.tick(300)
+
     for event in pygame.event.get():
+        tela.fill((0, 0, 0))
         if event.type == QUIT:
             pygame.quit()
             exit()
@@ -32,17 +37,25 @@ while True:
                 y += 20
         '''
         if pygame.key.get_pressed()[K_a]:
-            x -= 20
+            if x >= 10:
+                x -= 10
         if pygame.key.get_pressed()[K_w]:
-            y -= 20
+            if y >= 10:
+                y -= 10
         if pygame.key.get_pressed()[K_d]:
-            x += 20
+            if x <= 590:
+                x += 10
         if pygame.key.get_pressed()[K_s]:
-            y += 20
+            if y <= 420:
+                y += 10
 
-        pygame.draw.rect(tela, (100, 150, 100), (x, y, 40, 50))
-
+        ret_player = pygame.draw.rect(tela, (100, 150, 100), (x, y, 40, 50))
+        ret_boot = pygame.draw.rect(tela, (255, 0, 0), (x_boot, y_boot, 40, 50))
+        if ret_player.colliderect(ret_boot):
+            x_boot = randint(0, 600)
+            y_boot = randint(0, 430)
         pygame.display.update()
+
 
 
 
