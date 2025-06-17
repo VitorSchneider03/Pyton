@@ -5,6 +5,10 @@ from random import randint
 
 pygame.init()
 
+musica_de_fundo = pygame.mixer.music.load('Arquivos/8BitWalk.mp3')
+pygame.mixer.music.play(-1)
+colisao_sound = pygame.mixer.Sound('Arquivos/point.wav')
+
 largura = 640
 altura = 480
 x = largura/2
@@ -56,6 +60,7 @@ while True:
         ret_player = pygame.draw.rect(tela, (100, 150, 100), (x, y, 40, 50))
         ret_boot = pygame.draw.rect(tela, (255, 0, 0), (x_boot, y_boot, 40, 50))
         if ret_player.colliderect(ret_boot):
+            colisao_sound.play()
             x_boot = randint(0, 600)
             y_boot = randint(0, 430)
             pontos += 1
